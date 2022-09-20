@@ -10,7 +10,7 @@ sdl2-map-loader.so: loader.o
 	$(CC) "$<" -ldl `sdl2-config --libs` -shared -o "$@"
 
 loader.o: loader.c
-	$(CC) `sdl2-config --cflags` -Wall -fPIC -c "$@" "$<"
+	$(CC) `sdl2-config --cflags` -Wall -fPIC -c -o "$@" "$<"
 
 gamecontrollerdb.txt:
 	wget "https://raw.githubusercontent.com/gabomdq/SDL_GameControllerDB/master/gamecontrollerdb.txt"
